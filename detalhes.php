@@ -23,7 +23,7 @@ $row_produtos = mysqli_fetch_assoc($resultado_produtos);
   <link href="./css/shop-homepage.css" rel="stylesheet">
 
   <!-- Menu de navegação superior -->
-  <?php include_once("includes/menu.php"); ?>
+  <!-- <?php include_once("includes/menu.php"); ?> -->
 
 
 <br><br>
@@ -85,13 +85,6 @@ $row_produtos = mysqli_fetch_assoc($resultado_produtos);
 
   </div>
   <!-- /.container -->
-
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Webink 2020</p>
-    </div>
-    <!-- /.container -->
-  </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
