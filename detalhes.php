@@ -4,7 +4,7 @@ $result_produtos = "SELECT * FROM produtos WHERE idProdutos='$id_produtos'";
 $resultado_produtos = mysqli_query($conn, $result_produtos);
 $row_produtos = mysqli_fetch_assoc($resultado_produtos);
 
-
+$imagem = $row_produtos['imagem']
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +22,8 @@ $row_produtos = mysqli_fetch_assoc($resultado_produtos);
   <!-- Custom styles for this template -->
   <link href="./css/shop-homepage.css" rel="stylesheet">
 
-  <!-- Menu de navegação superior -->
-  <!-- <?php include_once("includes/menu.php"); ?> -->
+  <!-- Header -->
+  <!-- <?php include_once("includes/header.php"); ?> -->
 
 
 <br><br>
@@ -38,8 +38,7 @@ $row_produtos = mysqli_fetch_assoc($resultado_produtos);
 
       <div class="col-lg-4">
         <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="imagens/produtos/produtos.jpg" alt="..." height="10" width="10">
-          <!-- <img class="card-img-top img-fluid" src="imagens/produtos/<?php echo $row_produtos['imagem']; ?>.jpg" alt="..." height="10" width="10">-->
+          <img class="card-img-top img-fluid" src="imagens/produtos/<?php echo $row_produtos['imagem']; ?>.jpg" alt="..." height="10" width="10">
           <div class="card-body">
             <h3 class="card-title"><?php echo $row_produtos['descricao']; ?></h3>
             <h4 class="card-title"><?php echo 'R$ ' . $row_produtos['precoVenda']; ?> <?php echo 'por ' . $row_produtos['unidade']; ?></h4>
@@ -60,32 +59,36 @@ $row_produtos = mysqli_fetch_assoc($resultado_produtos);
             Detalhes do produto
           </div>
           <div class="card-body">
-          <!-- <p class="card-text"><?php echo $row_produtos['detalhes']; ?> -->
-            <p class="card-text"><?php echo 'Esse é um texto de exemplo, para deixar funcionando adicione a coluna detalhes na tabela produtos e edite a linha 64' ?>
+           <p class="card-text"><?php echo $row_produtos['detalhes']; ?>
+            <!-- <p class="card-text"><?php echo 'Esse é um texto de exemplo, para deixar funcionando adicione a coluna detalhes na tabela produtos e edite a linha 64' ?> -->
             </p>
             <hr>
-            Selecione a quantidade: <select class="custom-select custom-select-sm col-md-2" id="<?php echo $row_produtos['idProduto']; ?>" name="<?php echo $row_produtos['idProduto']; ?>">
+            <br>
+            <p class="stock_quantity"> Estoque: <?php echo $row_produtos['estoque'] ?>
+            <br>
+
+            <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Quantidade:</span>
+            </div> 
+            <form name="form" action="" method="get">
+              <input type="number" class="form-control" name="quantity" id="quantity" value="<?php echo $row_produtos['estoque'] ?>">
+            </form>
+            </div>
+            <!--- <select class="custom-select custom-select-sm col-md-2" id="<?php echo $row_produtos['idProduto']; ?>" name="<?php echo $row_produtos['idProduto']; ?>">
               <?php for ($i = 1; $i <= $row_produtos['estoque']; $i++) { ?>
                 <option value=" <?php echo $i ?> "> <?php echo $i ?></option>
               <?php } ?>
-            </select>
-            <a href="#" class="btn btn-success">Adicionar ao carrinho</a>
-            <a href="#" class="btn btn-primary" role="button">Adicionar ao carrinho</a>
+            </select> -->
+            <a href="https://api.whatsapp.com/send/?phone=5562981836830&text=Olá! Gostaria de estar adquirindo o <?php echo $row_produtos['descricao'] ?>" target="_blank" class="btn btn-primary" role="button">Comprar</a>
           </div>
         </div>
-
-
-
         <!-- /.card -->
-
       </div>
       <!-- /.col-lg-9 -->
-
     </div>
-
   </div>
   <!-- /.container -->
-
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

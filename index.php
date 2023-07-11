@@ -43,7 +43,7 @@ $total_produtos = mysqli_num_rows($resultado_produtos);
   <link href="./css/shop-homepage.css" rel="stylesheet">
 
   <!-- Menu de navegação superior -->
-  <?php include_once("includes/menu.php"); ?>
+  <?php include_once("includes/header.php"); ?>
 
   <!-- Banner -->
   <?php include_once("includes/banner.php"); ?>
@@ -61,7 +61,7 @@ $total_produtos = mysqli_num_rows($resultado_produtos);
           <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
             <!--  <img src="imagens/produtos/<?php echo $rows_produtos['imagem']; ?>.jpg" alt="..." height="250" width="250"> -->
-               <img src="imagens/produtos/produtos.jpg" alt="..." height="250" width="250"> 
+              <img src="imagens/produtos/produtos.jpg" alt="..." height="250" width="250">
               <div class="caption text-center">
                 <a href="detalhes.php?id_produtos=<?php echo $rows_produtos['idProdutos']; ?>">
                   <h4><?php echo $rows_produtos['descricao']; ?></h4><?php echo 'Apartir de R$ ' . $rows_produtos['precoVenda']; ?><br><br>
@@ -73,7 +73,7 @@ $total_produtos = mysqli_num_rows($resultado_produtos);
                   <?php } ?>
                 </select>
 
-                <a class="btn btn-primary" href="carrinho.php?acao=add&id=<?php echo $rows_produtos['idProdutos']?>" class="card-link" role="button">Add Carrinho</a> </p>
+                <a class="btn btn-primary" href="carrinho.php?acao=add&id=<?php echo $rows_produtos['idProdutos']?>" class="card-link" role="button">Comprar</a> </p>
               <!--  <a class="btn btn-primary" href="carrinho.php?acao=add&id=<?php echo $rows_produtos['idProdutos']?>" class="card-link">Comprar</a>
             -->  </div>
             </div>
