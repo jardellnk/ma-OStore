@@ -1,0 +1,74 @@
+--- SOBRE O SISTEMA
+
+Essa vitrine de produtos para o sistema de ordem de serviço Map-Os
+Ele é apenas um o frontend ( toda a parte de cadastro de produtos deve ser utilizado o map-os )
+porem ele precisa de algumas inclusoes na base de dados do mapos para que ele possa se integrar melhor ao seu sistema atual.
+
+use a opção SQL para incluir os novos campos. E estao incluidos dados GENERICOS apenas para nao quebrar a estetica do site. Voce pode editar esses valor antes de executar o codigo ou criar os campos necessarios para edição via MAP-OS  
+
+Obs:(Essa parte dos input e upload de imagem não irei incluir, ja que existe varios meios de obter esse resultado. mais espero que os interessados no projeto possam contribuir com os demais)  
+
+
+--- COMO INSTALO A VITRINE 
+
+
+Bem é so descompactar os arquivos em seu servidor seja Localhost ou web. 
+
+ex: localhost/ma-ostore (extraindo na pasta htdoc ou localhost/mapos/ma-store (extraindo dentro da pasta mapos) como preferir
+
+em seguida configurar o acesso ao banco de dados do Map-os 
+
+
+inc/conexao.php e preencher com as informaçoes correta. 
+
+
+--- EDITANDO O BANCO DE DADOS
+
+USE A OPÇÂO SQL do PHPmyAdmin
+
+
+ALTER TABLE `emitente` ADD `whatsapp` VARCHAR(15) NOT NULL DEFAULT '41999999999', ADD `facebook` VARCHAR(50) NOT NULL DEFAULT 'www.facebook.com', ADD `instagram` VARCHAR(50) NOT NULL DEFAULT 'www.instagram.com' ;
+
+Alteraçao em produtos
+
+ALTER TABLE `produtos` ADD `img` VARCHAR(255) NOT NULL DEFAULT 'default.jpg', 
+ALTER TABLE `produtos` ADD `especificacoes` VARCHAR(255), 
+
+
+--- PRINCIPAIS FUNCOES 
+
+ela traz algumas das informaçoes da tabela Emitente para o header e footer como 
+Nome da empresa, cnpj, endereço, whatsapp, instagram e facebook. 
+
+traz algumas informaçoes do produto como 
+Nome especificacao e foto.
+
+traz o nome_app da tabela configuração Exemplo o titulo do site ficara ( ASSISTENCIA DO JOAO  - MA-OSTORE) 
+
+--- CUSTOMIZAÇÃO
+
+A pagina INDEX.PHP ira exibir uma lista de 8 produtos aleatorios a cada vez que a pagina seja atualizada. 
+Pagina PRODUTOS.PHP ira exibir todos seus produtos cadastrados. 
+
+Por padrao deixei uma exibiçao de 30 produtos por pagina porem voce pode aumentar ou diminuir o numero de produtos exibidos editando o arquivo inc/site/produtos.php linha 5 (obs pode fazer o mesmo no index.php e pesquisar.php se desejar ) 
+
+$quantidade_pg = 30; // exibe 30 produtos por pagina.
+
+como trazer outras informaçoes da tabela produto para meu site
+voce ira inc/site/produtos.php 
+
+para imprimir na tela valor de venda use o codigo <?php echo $rows_produtos['precoVenda']; ?>
+sendo que ['QUE ESTIVER AQUI DENTRO'] sera a coluna a ser exibida 
+
+
+---Observaçoes Finais 
+
+Essa será a versao colaborativa ou seja voces podem fazer o que desejar com ela (usos pessoais, comerciais, vender, customizar) desde que respeitem o criterio de manter os creditos ao autor. 
+
+Irei dar suporte ou tera atualizaçoes futuras? 
+Pretendo dar mais uma refinada no projeto. Porem aviso desde ja esse projeto foi apenas para fins de estudo! 
+Porem eu ainda vejo muitas coisas para ele ate uma versao comercial completa mais isso ja é uma historia para um outro dia.
+
+
+
+
