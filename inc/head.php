@@ -3,7 +3,6 @@ $query = "SELECT * FROM configuracoes  WHERE 1"; // indica qual linha acessar
 $exec_query = mysqli_query($conn, $query);
 $row_emitente = mysqli_fetch_assoc($exec_query);
 ?>
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

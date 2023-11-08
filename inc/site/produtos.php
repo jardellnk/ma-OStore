@@ -51,6 +51,7 @@ $num_pagina = ceil($total_produtos / $quantidade_pg);
                                         <a href="detalhes.php?id_produtos=<?php echo $rows_produtos['idProdutos']; ?>">
                                         <?php echo $rows_produtos['descricao']; ?><br><?php /*echo 'Apartir de R$ '  . $rows_produtos['precoVenda'] */; ?><br><br>
                                         </a>
+                                        <a href="cart.php?add_to_cart=<?php echo $rows_produtos['idProdutos']; ?>">Adicionar ao Carrinho</a>
                                     </div></p>
                                 </div>
                                 </div>
