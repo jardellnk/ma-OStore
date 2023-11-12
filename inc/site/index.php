@@ -17,15 +17,15 @@ $resultado_produtos = mysqli_query($conn, $result_produtos);
             </div>
             <div class="col-12 col-one" >
                 <div class="row">
-                    <?php while ($rows_produtos = mysqli_fetch_assoc($resultado_produtos)) { ?>
+                    <?php while ($row_produtos = mysqli_fetch_assoc($resultado_produtos)) { ?>
                         <div class="col-sm-4 col-md-3" >
                             <?php
-                            if ($rows_produtos['img'] === null) {
+                            if ($row_produtos['img'] === null) {
                                 $img_src = 'assets/img/produtos/produtos.jpg';
                             } else {
-                                $img_path = 'assets/img/produtos/' . $rows_produtos['img'];
+                                $img_path = 'assets/img/produtos/' . $row_produtos['img'];
 
-                                if (empty($rows_produtos['img']) || !file_exists($img_path)) {
+                                if (empty($row_produtos['img']) || !file_exists($img_path)) {
                                     $img_src = 'assets/img/produtos/produtos.jpg';
                                 } else {
                                     $img_src = $img_path;
@@ -34,9 +34,14 @@ $resultado_produtos = mysqli_query($conn, $result_produtos);
                             ?>
                             <img src="<?php echo $img_src; ?>" alt="Product Image" height="200" width="200">
                             <div class="card-item:hover">
-                                <a href="detalhes.php?id_produtos=<?php echo $rows_produtos['idProdutos']; ?>">
-                                    <?php echo $rows_produtos['descricao']; ?>
+                                <a href="detalhes.php?id_produtos=<?php echo $row_produtos['idProdutos']; ?>">
+                                    <?php echo $row_produtos['descricao']; ?>
                                 </a>
+                                <a href="cart.php?add_to_cart=<?php echo $row_produtos['idProdutos']; ?>" class="btn btn-white btn-icon-left mt-3" id="btnLigar">
+            <span class="icon-left">
+              <i class="fa fa-shopping-bag"></i>
+            </span>Add ao carrinho          
+          </a>
                             </div>
                         </div>
                     <?php } ?>

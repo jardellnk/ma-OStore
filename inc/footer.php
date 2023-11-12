@@ -4,7 +4,6 @@ $query = "SELECT * FROM emitente";
 $exec_query = mysqli_query($conn, $query);
 $row_emitente = mysqli_fetch_assoc($exec_query);
 ?>
-
 <footer>
     <div class="container">
         <div class="row">

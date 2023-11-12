@@ -32,7 +32,7 @@ ALTER TABLE `emitente` ADD `whatsapp` VARCHAR(15) NOT NULL DEFAULT '41999999999'
 Alteraçao em produtos
 
 ALTER TABLE `produtos` ADD `img` VARCHAR(255) NOT NULL DEFAULT 'default.jpg', 
-ALTER TABLE `produtos` ADD `especificacoes` VARCHAR(255), 
+ALTER TABLE `produtos` ADD `especificacao` VARCHAR(255), 
 
 
 --- PRINCIPAIS FUNCOES 
@@ -57,7 +57,7 @@ $quantidade_pg = 30; // exibe 30 produtos por pagina.
 como trazer outras informaçoes da tabela produto para meu site
 voce ira inc/site/produtos.php 
 
-para imprimir na tela valor de venda use o codigo <?php echo $rows_produtos['precoVenda']; ?>
+para imprimir na tela valor de venda use o codigo <?php echo $row_produtos['precoVenda']; ?>
 sendo que ['QUE ESTIVER AQUI DENTRO'] sera a coluna a ser exibida 
 
 

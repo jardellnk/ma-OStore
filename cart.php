@@ -1,6 +1,4 @@
-<?php include_once("inc/head.php"); ?>
-
-<?php
+<?php include_once("inc/head.php"); 
 session_start();
 
 // Inicialize o carrinho na sessão, se ainda não existir
@@ -74,36 +72,33 @@ if (isset($_GET['remove_one_item'])) {
     } else {
         echo "<h2>Itens no Carrinho:</h2>";
         echo "<ul>";
-
         $total_carrinho = 0; // Inicialize o total do carrinho
-
         foreach ($_SESSION['cart'] as $idProdutos => $quantity) {
             // Consulta ao banco de dados para obter informações do produto
-            $query = "SELECT descricao, precoVenda FROM produtos WHERE idProdutos = $idProdutos";
+            $query = "SELECT * FROM produtos WHERE idProdutos";
             $result = $conn->query($query);
 
             if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                $descricao = $row['descricao'];
-                $precovenda = $row['precoVenda'];
+                $rows = $result->fetch_assoc();
+                $descricao = $rows['descricao'] ;
+                $precovenda = $rows['precoVenda'];
                 $total_item = $precovenda * $quantity;
                 $total_carrinho += $total_item; // Atualizar o total do carrinho
 
-                echo "<li>";
-                echo "Descrição: " . $descricao . " - Quantidade: " . $quantity . " - Preço unitário: R$ " . $precovenda;
-                echo " - Total do Item: R$ " . $total_item;
-                echo " - <a href='cart.php?remove_from_cart=" . $idProdutos . "'>Remover do Carrinho</a>";
-                echo " - <a href='cart.php?add_one_item=" . $idProdutos . "'>Adicionar um item</a>";
-                echo " - <a href='cart.php?remove_one_item=" . $idProdutos . "'>Remover um item</a>";
-                echo "</li>";
+                echo "<br>";
+                echo "Descrição: " . $descricao ;
+                echo "<br>Quantidade: " . $quantity . " - Preço unitário: R$ " . $precovenda;
+                echo " Total do Item: R$ " . $total_item;
+                echo " <br><a href='cart.php?remove_from_cart=" . $idProdutos . "'>Remover do Carrinho</a>";
+                echo " <a href='cart.php?add_one_item=" . $idProdutos . "'>Adicionar um item</a>";
+                echo " <a href='cart.php?remove_one_item=" . $idProdutos . "'>Remover um item</a>";
+                echo "</br>";
             }
         }
 
         echo "</ul>";
-
         // Exibir o total do carrinho
         echo "<p>Total do Carrinho: R$ " . $total_carrinho . "</p>";
-
         // Adicione um botão para finalizar a compra ou continuar comprando
         echo "<p><a href='finalizar_compra.php'>Finalizar Compra</a></p>";
     }

@@ -369,13 +369,13 @@ readers do not read off random characters that represent icons */
 .fa-arrow-up:before {
   content: "\f062"; }
 
-.fa-arrows-alt:before {
+.fa-arrow-alt:before {
   content: "\f0b2"; }
 
-.fa-arrows-alt-h:before {
+.fa-arrow-alt-h:before {
   content: "\f337"; }
 
-.fa-arrows-alt-v:before {
+.fa-arrow-alt-v:before {
   content: "\f338"; }
 
 .fa-artstation:before {
@@ -1083,7 +1083,7 @@ readers do not read off random characters that represent icons */
 .fa-compress-alt:before {
   content: "\f422"; }
 
-.fa-compress-arrows-alt:before {
+.fa-compress-arrow-alt:before {
   content: "\f78c"; }
 
 .fa-concierge-bell:before {
@@ -1497,7 +1497,7 @@ readers do not read off random characters that represent icons */
 .fa-expand-alt:before {
   content: "\f424"; }
 
-.fa-expand-arrows-alt:before {
+.fa-expand-arrow-alt:before {
   content: "\f31e"; }
 
 .fa-expeditedssl:before {
@@ -1665,7 +1665,7 @@ readers do not read off random characters that represent icons */
 .fa-firefox:before {
   content: "\f269"; }
 
-.fa-firefox-browser:before {
+.fa-firefox-brower:before {
   content: "\e007"; }
 
 .fa-first-aid:before {
@@ -2973,7 +2973,7 @@ readers do not read off random characters that represent icons */
 .fa-penny-arcade:before {
   content: "\f704"; }
 
-.fa-people-arrows:before {
+.fa-people-arrow:before {
   content: "\e068"; }
 
 .fa-people-carry:before {

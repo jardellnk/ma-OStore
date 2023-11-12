@@ -101,7 +101,7 @@ $result_avaliacoes = $conn->query($query_avaliacoes);
                         <label for="estrela_cinco"><i class="opcao fa"></i></label>
                         <input type="radio" name="estrela" id="estrela_cinco" value="5"><br><br>
                         <!-- Campo para enviar a mensagem -->
-                        <textarea name="mensagem" rows="4" cols="30" placeholder="Digite o seu comentário..."></textarea><br><br>
+                        <textarea name="mensagem" row="4" cols="30" placeholder="Digite o seu comentário..."></textarea><br><br>
                         <!-- Botão para enviar os dados do formulário -->
                         <input type="submit" value="Cadastrar"><br><br>
                     </div>
