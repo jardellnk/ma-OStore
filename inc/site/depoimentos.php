@@ -55,18 +55,18 @@ $result_avaliacoes = $conn->query($query_avaliacoes);
 
     <?php
     // Percorrer a lista de registros recuperada do banco de dados
-    while ($rows_avaliacao = $result_avaliacoes->fetch_assoc()) {
-         "<p>Avaliação: " . $rows_avaliacao['id'] . "</p>";
+    while ($row_avaliacao = $result_avaliacoes->fetch_assoc()) {
+         "<p>Avaliação: " . $row_avaliacao['id'] . "</p>";
         for ($i = 1; $i <= 5; $i++) {
-            if ($i <= $rows_avaliacao['qtd_estrela']) {
+            if ($i <= $row_avaliacao['qtd_estrela']) {
                 echo '<i class="opcao fa fa-star"></i>';
             } else {
                 echo '<i class="opcao fa fa-star-o"></i> ';
             }
         }
-        echo $rows_avaliacao['nome'].'<br>';
-        echo $rows_avaliacao['mensagem'].'<BR>';
-        ECHO $rows_avaliacao['created'].'<BR>';
+        echo $row_avaliacao['nome'].'<br>';
+        echo $row_avaliacao['mensagem'].'<BR>';
+        ECHO $row_avaliacao['created'].'<BR>';
     }
     ?><BR>
 
@@ -101,7 +101,7 @@ $result_avaliacoes = $conn->query($query_avaliacoes);
                         <label for="estrela_cinco"><i class="opcao fa"></i></label>
                         <input type="radio" name="estrela" id="estrela_cinco" value="5"><br><br>
                         <!-- Campo para enviar a mensagem -->
-                        <textarea name="mensagem" rows="4" cols="30" placeholder="Digite o seu comentário..."></textarea><br><br>
+                        <textarea name="mensagem" row="4" cols="30" placeholder="Digite o seu comentário..."></textarea><br><br>
                         <!-- Botão para enviar os dados do formulário -->
                         <input type="submit" value="Cadastrar"><br><br>
                     </div>

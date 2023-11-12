@@ -14,8 +14,8 @@ $resultado = mysqli_query($conn, $query);
 // Contar o número total de produtos encontrados na pesquisa
 $query_total = "SELECT COUNT(*) as total_produtos FROM produtos WHERE descricao LIKE '%$valor_pesquisar%'";
 $result_total = mysqli_query($conn, $query_total);
-$rows_total = mysqli_fetch_assoc($result_total);
-$total_produtos = $rows_total['total_produtos'];
+$row_total = mysqli_fetch_assoc($result_total);
+$total_produtos = $row_total['total_produtos'];
 // Calcular o número de páginas necessárias
 $num_pagina = ceil($total_produtos / $quantidade_pg);
 ?>
@@ -35,17 +35,17 @@ $num_pagina = ceil($total_produtos / $quantidade_pg);
                 <div class="container" role="main">
                     <!-- Exibir produtos encontrados -->
                     <div class="row">
-                        <?php while ($rows_produtos = mysqli_fetch_assoc($resultado)) { ?>
+                        <?php while ($row_produtos = mysqli_fetch_assoc($resultado)) { ?>
                             <div class="col-sm-6 col-md-3">
                                 <div class="thumbnail">
                                     <?php
-                                    $img_path = 'assets/img/produtos/' . $rows_produtos['img'];
+                                    $img_path = 'assets/img/produtos/' . $row_produtos['img'];
                                     $img_src = (file_exists($img_path)) ? $img_path : 'assets/img/produtos/default.jpg';
                                     echo '<img src="' . $img_src . '" alt="..." height="200" width="200">';
                                     ?>
                                     <div class="card-item:hover">
-                                        <a href="detalhes.php?id_produtos=<?php echo $rows_produtos['idProdutos']; ?>">
-                                            <?php echo htmlspecialchars($rows_produtos['descricao']); ?>
+                                        <a href="detalhes.php?id_produtos=<?php echo $row_produtos['idProdutos']; ?>">
+                                            <?php echo htmlspecialchars($row_produtos['descricao']); ?>
                                         </a>
                                         
                                     </div>

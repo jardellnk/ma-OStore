@@ -57,7 +57,7 @@ $quantidade_pg = 30; // exibe 30 produtos por pagina.
 como trazer outras informaçoes da tabela produto para meu site
 voce ira inc/site/produtos.php 
 
-para imprimir na tela valor de venda use o codigo <?php echo $rows_produtos['precoVenda']; ?>
+para imprimir na tela valor de venda use o codigo <?php echo $row_produtos['precoVenda']; ?>
 sendo que ['QUE ESTIVER AQUI DENTRO'] sera a coluna a ser exibida 
 
 

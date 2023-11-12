@@ -11,8 +11,8 @@ $resultado_produtos = mysqli_query($conn, $query_produtos);
 // Obter o número total de produtos
 $query_total_produtos = "SELECT COUNT(*) as total_produtos FROM produtos";
 $result_total_produtos = mysqli_query($conn, $query_total_produtos);
-$rows_total_produtos = mysqli_fetch_assoc($result_total_produtos);
-$total_produtos = $rows_total_produtos['total_produtos'];
+$row_total_produtos = mysqli_fetch_assoc($result_total_produtos);
+$total_produtos = $row_total_produtos['total_produtos'];
 $num_pagina = ceil($total_produtos / $quantidade_pg);
 ?>
 
@@ -30,7 +30,7 @@ $num_pagina = ceil($total_produtos / $quantidade_pg);
                 <div class="col-12 col-one">
                     <div class="row">
                         
-                        <?php while ($rows_produtos = mysqli_fetch_assoc($resultado_produtos)) { ?>
+                        <?php while ($row_produtos = mysqli_fetch_assoc($resultado_produtos)) { ?>
                             <div class="col-sm-4 ">
                             
                             <div class="card mt-4">
@@ -40,18 +40,18 @@ $num_pagina = ceil($total_produtos / $quantidade_pg);
                             
                                 
                                     <?php
-                                    $img_path = 'assets/img/produtos/' . $rows_produtos['img'];
-                                    if (!empty($rows_produtos['img']) && file_exists($img_path)) {
+                                    $img_path = 'assets/img/produtos/' . $row_produtos['img'];
+                                    if (!empty($row_produtos['img']) && file_exists($img_path)) {
                                         echo '<img src="' . $img_path . '" alt="..." height="200" width="200">';
                                     } else {
                                         echo '<img src="assets/img/produtos/default.jpg" alt="..." height="200" width="200">';
                                     }
                                     ?>
                                     <p><div class="card-body">
-                                        <a href="detalhes.php?id_produtos=<?php echo $rows_produtos['idProdutos']; ?>">
-                                        <?php echo $rows_produtos['descricao']; ?><br><?php /*echo 'Apartir de R$ '  . $rows_produtos['precoVenda'] */; ?><br><br>
+                                        <a href="detalhes.php?id_produtos=<?php echo $row_produtos['idProdutos']; ?>">
+                                        <?php echo $row_produtos['descricao']; ?><br><?php /*echo 'Apartir de R$ '  . $row_produtos['precoVenda'] */; ?><br><br>
                                         </a>
-                                        <a href="cart.php?add_to_cart=<?php echo $rows_produtos['idProdutos']; ?>" class="btn btn-white btn-icon-left mt-3" id="btnLigar">
+                                        <a href="cart.php?add_to_cart=<?php echo $row_produtos['idProdutos']; ?>" class="btn btn-white btn-icon-left mt-3" id="btnLigar">
             <span class="icon-left">
               <i class="fa fa-shopping-bag"></i>
             </span>Add ao carrinho          
