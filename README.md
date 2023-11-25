@@ -66,7 +66,7 @@ A[Banco dados Mapos] <-- Lista produtos --> B((Ma-OStore))
 C(MapOs) --> A
 
 B --> D{Cliente}
- E(Lojista/Assistencia)--> 
+C --> E(Lojista/Assistencia)
 B --> E
 A --> C
 ```
