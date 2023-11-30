@@ -1,9 +1,7 @@
 <?php include_once("conexao.php");
-$query = "SELECT * FROM configuracoes  WHERE 1"; // indica qual linha acessar 
+$query = "SELECT * FROM configuracoes  WHERE 1"; 
 $exec_query = mysqli_query($conn, $query);
 $row_emitente = mysqli_fetch_assoc($exec_query);
-
-
 ?>
 <head>
     <meta charset="UTF-8" />
@@ -16,3 +14,13 @@ $row_emitente = mysqli_fetch_assoc($exec_query);
     <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="./assets/css/responsivo.css" />
 </head>
+
+<?php
+session_start();
+
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
+$quantidadeItensNoCarrinho = array_sum($_SESSION['cart']);
+?>

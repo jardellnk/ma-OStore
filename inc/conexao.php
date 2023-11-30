@@ -2,7 +2,9 @@
 	$servidor = "localhost";
 	$usuario = "root";
 	$senha = "";
-	$dbname = "mapos";
+	$dbname = "maposteste";
 	//Criar a conexão
-	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);	
+	$conn = mysqli_connect($servidor, $usuario, $senha, $dbname);
+	
+	$dir_img ="os/";
 ?>

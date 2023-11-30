@@ -3,10 +3,7 @@ $query = "SELECT * FROM emitente";
 $exec_query = mysqli_query($conn, $query);
 $row_emitente = mysqli_fetch_assoc($exec_query);
 ?>
-<a class="botao-carrinho animated bounceIn hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
-            <div class="badge-total-carrinho">0</div>
-            <i class="fa fa-shopping-bag"></i>
-        </a>
+        
 <section class="banner">
     <div class="container">
         <div class="row">
